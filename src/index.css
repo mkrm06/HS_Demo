@@ -1,4 +1,6 @@
-/* Global resets & body */
+/* ----------------------------------------------------
+   GLOBAL RESETS & BODY
+---------------------------------------------------- */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,8 +13,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #fff; /* default light background */
-  color: #000; /* change text to visible on white background */
+  background-color: #fff;
+  color: #000;
   overflow-x: hidden;
 }
 
@@ -23,7 +25,7 @@ body {
   }
 }
 
-/* Links */
+/* GLOBAL ELEMENTS */
 a {
   font-weight: 500;
   text-decoration: none;
@@ -33,7 +35,6 @@ a:hover {
   color: #535bf2;
 }
 
-/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -49,32 +50,272 @@ button:hover {
   border-color: #646cff;
 }
 
-/* Headings */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-/* Root container */
 #root {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* removes bottom gap */
   min-height: 100vh;
   width: 100%;
-  padding: 2rem 5%;
-  box-sizing: border-box; /* ensure padding included in width */
+  padding: 0 !important;  /* Fix spacing */
+  box-sizing: border-box;
 }
 
-/* Optional: sections take full height */
-section {
-  width: 100%;
-  flex: 1;
-}
-
-/* Full-width images */
 img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* ----------------------------------------------------
+   REGISTER + LOGIN SHARED LAYOUT (Figma accurate)
+---------------------------------------------------- */
+.register-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* LEFT PANEL (shared) */
+.register-left {
+  width: 50%;
+  background-image: url("/images/signup-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.register-left-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(138, 85, 42, 0.42);
+}
+
+.register-left-content {
+  position: absolute;
+  top: 33%;
+  left: 12%;
+  max-width: 350px;
+  color: white;
+}
+
+.register-logo-circle {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: linear-gradient(#ff8a3d, #d86300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.left-title {
+  margin-top: 20px;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.left-subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* RIGHT PANEL (shared) */
+.register-right {
+  width: 50%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding-top: 40px !important;
+}
+
+.register-box {
+  width: 420px;
+  max-width: 420px !important;
+  margin: 0 auto !important;
+  padding-top: 10px !important;
+}
+
+/* Titles */
+.reg-title {
+  font-size: 30px !important;
+  text-align: center !important;
+  color: #b67a17 !important;
+  font-weight: 700 !important;
+  margin-top: 20px !important;
+  margin-bottom: 5px !important;
+}
+
+.reg-subtitle {
+  text-align: center !important;
+  color: #555 !important;
+  font-size: 15px !important;
+  margin-top: 5px !important;
+  margin-bottom: 25px !important;
+}
+
+/* Social Buttons */
+.social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.social-btn img {
+  width: 22px;
+}
+
+/* Divider */
+.divider-row {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+.line {
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+.divider-row span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* FORM */
+.form-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-area label {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-area input {
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.form-area input:focus {
+  outline: 2px solid #b67a17;
+}
+
+/* TERMS */
+.terms-row {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.link {
+  color: #1a68ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* BUTTON */
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(#f2b642, #b67a17);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* FOOTER LOGIN */
+.bottom-login {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------
+   LOGIN-SPECIFIC ELEMENTS
+---------------------------------------------------- */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.forgot {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c6782d;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .register-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .register-left {
+    width: 100%;
+    height: 320px;
+  }
+
+  .register-right {
+    width: 100%;
+    padding: 20px;
+    align-items: flex-start !important;
+  }
+
+  .register-box {
+    width: 100%;
+    max-width: 380px;
+    padding-top: 0 !important;
+  }
+
+  .register-left-content {
+    top: 25%;
+    left: 8%;
+  }
 }
