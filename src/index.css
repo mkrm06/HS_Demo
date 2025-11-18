@@ -12,12 +12,13 @@ body {
   min-height: 100vh;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #fff; /* default light background */
-  color: #ffffff;
+  color: #000; /* change text to visible on white background */
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #e0e0e0;
+    background-color: #121212;
     color: rgba(255, 255, 255, 0.87);
   }
 }
@@ -26,7 +27,7 @@ body {
 a {
   font-weight: 500;
   text-decoration: none;
-  color: inherit; /* override default for navbar */
+  color: inherit;
 }
 a:hover {
   color: #535bf2;
@@ -54,10 +55,26 @@ h1 {
   line-height: 1.1;
 }
 
-/* Utility */
+/* Root container */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem 5%; /* responsive padding */
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* removes bottom gap */
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 5%;
+  box-sizing: border-box; /* ensure padding included in width */
+}
+
+/* Optional: sections take full height */
+section {
+  width: 100%;
+  flex: 1;
+}
+
+/* Full-width images */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
