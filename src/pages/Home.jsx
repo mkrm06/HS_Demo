@@ -24,10 +24,11 @@ function App() {
 
       <SeasonalBanner title="New Sale" />
 
-      <Footer />   {/* 👈 FOOTER AT THE BOTTOM */}
+      <Footer />  
 
     </div>
   );
 }
 
 export default App;
+
