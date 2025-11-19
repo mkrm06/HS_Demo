@@ -1,32 +1,33 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Banner from "../components/Banner";
+import CategorySection from "../components/CategorySection";
+import ProductGrid from "../components/ProductGrid";
+import Recommended from "../components/Recommended";
+import SeasonalBanner from "../components/SeasonalBanner";
 import Footer from "../components/Footer";
 
-export default function Home() {
+
+function App() {
   return (
-    <>
-      <main style={{ padding: "40px", textAlign: "center" }}>
-        <h1>Welcome to Our Website</h1>
-        <p>
-          This is the home page. You can add your content, features, or sections
-          here.
-        </p>
-        <div style={{ marginTop: "20px" }}>
-          <button
-            style={{
-              padding: "10px 20px",
-              backgroundColor: "#007bff",
-              color: "#fff",
-              border: "none",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            Get Started
-          </button>
-        </div>
-      </main>
-      <Footer />
-    </>
+    <div className="bg-[#f9f6f1] min-h-screen font-sans">
+
+      <Navbar />
+
+      <Banner />
+
+      <CategorySection />
+
+      <ProductGrid title="Trending and New Styles" />
+
+      <Recommended title="Recommended for You" />
+
+      <SeasonalBanner title="New Sale" />
+
+      <Footer />   {/* 👈 FOOTER AT THE BOTTOM */}
+
+    </div>
   );
 }
+
+export default App;
