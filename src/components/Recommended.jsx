@@ -19,7 +19,8 @@ const RecommendedForYou = () => {
         Handpicked looks we think you'll love based on your browsing.
       </p>
 
- <div className="max-w-6xl mx-auto grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
+ <div className="max-w-6xl mx-auto grid recommended-grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 gap-8 px-4">
+
         
         {products.map((item, i) => (
           <div 
@@ -73,6 +74,82 @@ const RecommendedForYou = () => {
         <div className="w-2 h-2 rounded-full bg-gray-400"></div>
         <div className="w-2 h-2 rounded-full bg-gray-700"></div>
       </div>
+ <style>{`
+  /* Mobile & small tablet responsiveness */
+  @media (max-width: 768px) {
+    /* Change grid to 2 columns on mobile/tablet */
+    .recommended-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 1rem !important;
+    }
+
+    /* Product image adjustments and center */
+    .recommended-grid img {
+      display: block !important;
+      margin: 0 auto !important;
+      height: 18rem !important;
+      border-radius: 1rem !important;
+      margin-bottom: 0.8rem !important;
+    }
+
+    /* Product name text adjustments */
+    .recommended-grid p.text-sm {
+      font-size: 0.85rem !important;
+      text-align: center !important;
+    }
+
+    /* Product price text adjustments */
+    .recommended-grid p.text-lg {
+      font-size: 1rem !important;
+      text-align: center !important;
+    }
+
+    /* Add to Cart button adjustments and center */
+    .recommended-grid button {
+      display: block !important;
+      margin: 0 auto !important;
+      padding: 0.4rem 1.2rem !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Grid becomes 1 column on small phones */
+    .recommended-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+
+    /* Product image smaller and centered */
+    .recommended-grid img {
+      display: block !important;
+      margin: 0 auto !important;
+      height: 16rem !important;
+    }
+
+    /* Product name text smaller */
+    .recommended-grid p.text-sm {
+      font-size: 0.8rem !important;
+      text-align: center !important;
+    }
+
+    /* Product price text smaller */
+    .recommended-grid p.text-lg {
+      font-size: 0.95rem !important;
+      text-align: center !important;
+    }
+
+    /* Add to Cart button smaller and centered */
+    .recommended-grid button {
+      display: block !important;
+      margin: 0 auto !important;
+      padding: 0.35rem 1rem !important;
+      font-size: 0.85rem !important;
+    }
+  }
+`}</style>
+
+
     </section>
   );
 };
