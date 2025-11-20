@@ -127,9 +127,9 @@ body{
   border-bottom: 1px solid #ddd;
   cursor: pointer;
 }
-
 /* RESPONSIVE */
 @media (max-width: 850px) {
+  /* Hide desktop nav links and icons */
   .navLinks {
     display: none;
   }
@@ -138,11 +138,31 @@ body{
     display: none;
   }
 
+  /* Show menu icon */
   .menuIcon {
     display: block;
   }
 
+  /* Mobile Menu Dropdown */
   .mobileMenu {
-    display: none; /* hide by default, toggle with JS */
+    display: flex; /* flex column for links */
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 5%;
+    position: absolute;
+    top: 16%; /* right below navbar */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+
+  .mobileLink {
+    padding: 0px 0;
+    font-size: 16px;
+    border-bottom: 0px solid #ddd;
+    cursor: pointer;
   }
 }
+
