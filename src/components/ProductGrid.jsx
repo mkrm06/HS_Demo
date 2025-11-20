@@ -50,7 +50,7 @@ const ProductGrid = ({ title }) => {
             
          <div 
                 className="relative w-full flex items-end justify-center bg-gray-50"
-                style={{ marginBottom: '60px' }} // FORCES 50px gap below the image
+                style={{ marginBottom: '40px' }} // FORCES 50px gap below the image
             >
 
               
@@ -62,54 +62,21 @@ const ProductGrid = ({ title }) => {
                 alt={names[index]}
                 className="w-[90%] h-64 md:h-72 object-cover rounded-[1rem]"
               />
-
-{/* Bottom 1/3 Dark Overlay */}
 <div
-  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] rounded-b-2xl flex flex-col 
-  items-center justify-center object-cover rounded-[1rem]"
-  style={{
-    height: "25%",
-    background: "rgba(0,0,0,0.6)",
-    top: "298px"
-  }}
+  className="overlay absolute inset-0 w-[90%] mx-auto flex flex-col items-center justify-center rounded-b-[1rem]"
+  style={{ background: "rgba(0,0,0,0.4)" }} // slightly transparent dark overlay
 >
-  {/* Overlay Text */}
-  <p
-    style={{
-      color: '#edebe0ff',
-      fontSize: '25px',
-      fontWeight: '900',
-      marginBottom: '0.5rem',
-      textAlign: 'center'  // Inline style to center text
-    }}
-  >
+  <p className="overlay-text font-bold text-center mb-2">
     {names[index]}
   </p>
 
-  {/* Button inside overlay */}
-   <button
-    style={{
-      backgroundColor: 'orange',
-      color: 'white',
-      padding: '0.5rem 1.5rem',
-      borderRadius: '9999px',
-      fontWeight: '600',
-      boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-      cursor: 'pointer',
-      transition: 'all 0.3s ease'
-    }}
-    onMouseOver={e => {
-      e.currentTarget.style.backgroundColor = '#f97316'; // hover color
-      e.currentTarget.style.transform = 'scale(1.05)';
-    }}
-    onMouseOut={e => {
-      e.currentTarget.style.backgroundColor = 'orange';
-      e.currentTarget.style.transform = 'scale(1)';
-    }}
-  >
+  <button className="overlay-btn">
     Shop Now
   </button>
 </div>
+
+
+
 </div>
 
 
@@ -117,6 +84,59 @@ const ProductGrid = ({ title }) => {
           </div>
         ))}
       </div>
+   <style>
+  {`
+    /* Overlay text */
+.overlay-text {
+  color: #edebe0ff;
+  font-size: 25px;
+  font-weight: 900;
+  text-align: left; /* default left */
+  word-break: break-word;
+  margin-bottom: 0.5rem;
+}
+  
+    .overlay-btn {
+      background-color: orange;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 400;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .overlay-btn:hover {
+      background-color: #f97316;
+      transform: scale(1.05);
+    }
+
+    /* Medium devices */
+    @media (max-width: 1024px) {
+      .overlay-text { font-size: 20px; }
+      .overlay-btn { padding: 0.4rem 1rem; font-size: 14px; }
+    }
+
+    /* Small devices */
+    @media (max-width: 768px) {
+      .overlay-text { font-size: 13px; }
+      .overlay-btn { padding: 0.35rem 0.9rem; font-size: 13px; }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 480px) {
+      .overlay-btn { padding: 0.15rem 0.5rem; font-size: 5px; }
+      .overlay-text {
+    font-size: 7px;
+    text-align: center; /* force center on mobile */
+  }
+    }
+      
+  `}
+</style>
+
+
+
     </section>
   );
 };
