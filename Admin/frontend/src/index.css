@@ -1,0 +1,457 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #faf2d3;
+  color: #000;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #2b2b2b;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER */
+.sidebar-header {
+  padding: 24px;
+  border-bottom: 1px solid #444;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  background: #ff8844;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.brand-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f7b56a;
+}
+
+.sub-text {
+  font-size: 12px;
+  color: #bbbbbb;
+  margin-top: 2px;
+}
+
+/* MENU SECTION */
+.menu {
+  padding: 24px;
+}
+
+.menu-item {
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #d0d0d0;
+  border-radius: 10px;
+  transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hover */
+.menu-item:hover {
+  color: white;
+}
+
+/* ACTIVE ITEM (ROUNDED HIGHLIGHT BOX) */
+.menu-item.active {
+  background: #ffffff22;
+  color: white;
+  font-weight: 600;
+}
+
+/* FOOTER */
+.sidebar-footer {
+  padding: 24px;
+  border-top: 1px solid #444;
+  color: #cccccc;
+}
+
+.footer-name {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.footer-email {
+  font-size: 12px;
+}
+
+/* Logout inside menu group */
+.logout-item {
+  margin-top: 20px;
+}
+
+.logout-item:hover {
+  background: #ffffff22;
+  color: white;
+}
+
+/* Sidebar Items */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  color: #63d1f3;
+  font-weight: 600;
+}
+
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Page Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: #555;
+  margin-top: 4px;
+}
+
+.add-button {
+  background-color: black;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.add-plus {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Table Styling */
+.table-container {
+  background-color: white;
+  border-radius: 16px;
+  overflow: visible;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: visible;
+}
+
+th {
+  text-align: left;
+  font-size: 14px;
+  padding: 16px;
+  background-color: #fafafa;
+}
+
+td {
+  padding: 16px;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+  overflow: visible;
+}
+
+tr {
+  position: relative;
+}
+
+tr:hover {
+  background-color: #f7f7f7;
+}
+
+/* Product Column */
+.product-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: 600;
+}
+
+.product-sub {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Rating */
+.rating-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star-icon {
+  color: gold;
+}
+
+/* STATUS LABELS (MATCHES THE IMAGE EXACTLY) */
+.status-pill {
+  padding: 6px 22px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ACTIVE = BLACK ROUND PILL */
+.status-pill.active {
+  background: #000;
+  color: #fff;
+}
+
+/* INACTIVE = LIGHT GRAY PILL */
+.status-pill.inactive {
+  background: #dcdcdc;
+  color: #555;
+}
+
+/* Actions */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.action-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.delete { color: #000000ff; }
+.edit { color: black; }
+
+/* ------ ORDERS TABLE STYLES ------ */
+
+.orders-table-wrapper {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  overflow: visible;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: visible;
+}
+
+.orders-table th {
+  text-align: left;
+  font-weight: 600;
+  padding: 12px 10px;
+  color: #444;
+  background: #f5f5f5;
+}
+
+.orders-table td {
+  padding: 16px 10px;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: visible;
+}
+
+.orders-table tr {
+  position: relative;
+}
+
+.orders-table tr:hover {
+  background: #fafafa;
+}
+
+/* Customer name + email */
+.cust-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cust-email {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Payment pill */
+.payment-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.payment-pill.card {
+  background: #e3f0ff;
+  color: #1d4ed8;
+}
+
+.payment-pill.cod {
+  background: #fff0da;
+  color: #b45309;
+}
+
+/* Status cell wrapper */
+.status-cell {
+  position: relative;
+  overflow: visible;
+}
+
+/* Status button */
+.status-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  min-width: 130px;
+}
+
+.status-button:hover {
+  background: #f7f7f7;
+}
+
+/* Status dot colors */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.delivered {
+  background: #10b981;
+}
+
+.status-dot.shipped {
+  background: #000;
+}
+
+.status-dot.pending,
+.status-dot.confirmed,
+.status-dot.cancelled {
+  background: #666;
+}
+
+/* Dropdown arrow */
+.dropdown-arrow {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+/* Status Dropdown */
+.status-dropdown {
+  position: absolute;
+  background: white;
+  padding: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  margin-top: 4px;
+  z-index: 100;
+  min-width: 150px;
+  left: 0;
+  top: 100%;
+}
+
+.status-item {
+  width: 100%;
+  padding: 10px 14px;
+  text-align: left;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.status-item:hover {
+  background: #f3f3f3;
+}
+
+.status-item.selected {
+  background: #e6f0ff;
+  font-weight: 600;
+}
+
+.tick {
+  float: right;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+/* --- Search Bar (Matches Screenshot Exactly) --- */
+.search-bar {
+  width: 60%;
+  padding: 14px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #e3e3e3;
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.2s ease-in-out;
+  margin-bottom: 28px;
+}
+
+/* Hover + Focus for smooth effect */
+.search-bar:focus {
+  border-color: #bdbdbd;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.search-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* LEFT aligned */
+  margin-bottom: 25px;
+}
