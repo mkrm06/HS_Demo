@@ -11,6 +11,7 @@ import Wishlist from "../pages/Wishlist";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import About from "../pages/About";
+import FAQ from "../pages/FAQ";
 import Contact from "../pages/Contact";
 import UserDashboard from "../pages/UserDashboard";
 import AdminDashboard from "../pages/AdminDashboard";
@@ -26,6 +27,7 @@ function AppRoutes() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
 

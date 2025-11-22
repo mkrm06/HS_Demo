@@ -7,10 +7,10 @@ export default function About() {
       {/* Hero Section */}
       <section className="about-hero" style={{
         backgroundImage: "url('/wedding-dress-salon-india-bridal-gown-gold-embroidery-detail-mannequin-dresses-hang-racks-stylish-attire-fashion-colors-385659358.jpg')",
-        backgroundSize: "contain", // Resize image to fit
+        backgroundSize: "contain", 
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        padding: "100px 40px", // Added left and right space
+        padding: "100px 40px", 
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
